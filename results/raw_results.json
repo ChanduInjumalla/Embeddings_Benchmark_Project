@@ -1,0 +1,129 @@
+{
+  "quality": {
+    "minilm": {
+      "recall@1": 0.01,
+      "recall@5": 0.049166666666666664,
+      "recall@10": 0.17333333333333337,
+      "ndcg@10": 0.08515577788326725
+    },
+    "bge-base": {
+      "recall@1": 0.04166666666666666,
+      "recall@5": 0.11083333333333333,
+      "recall@10": 0.18666666666666665,
+      "ndcg@10": 0.11714149793542968
+    },
+    "bge-large": {
+      "recall@1": 0.03,
+      "recall@5": 0.11833333333333335,
+      "recall@10": 0.19583333333333333,
+      "ndcg@10": 0.11502790695606395
+    }
+  },
+  "latency": {
+    "minilm": {
+      "mean_ms": 11.89335300354287,
+      "median_ms": 12.091899989172816,
+      "std_ms": 1.8015665326000492,
+      "p95_ms": 14.543515015975572,
+      "p99_ms": 15.332465987303298,
+      "min_ms": 7.569200010038912,
+      "max_ms": 16.05179999023676
+    },
+    "bge-base": {
+      "mean_ms": 47.60199900250882,
+      "median_ms": 46.83490001480095,
+      "std_ms": 5.5995070947058805,
+      "p95_ms": 52.97807003953494,
+      "p99_ms": 68.1255920045079,
+      "min_ms": 38.12350000953302,
+      "max_ms": 89.19199998490512
+    },
+    "bge-large": {
+      "mean_ms": 149.42326799733564,
+      "median_ms": 143.10644997749478,
+      "std_ms": 20.531204731198425,
+      "p95_ms": 188.401644967962,
+      "p99_ms": 235.2510940236971,
+      "min_ms": 127.62280000606552,
+      "max_ms": 242.9625999648124
+    }
+  },
+  "cost": {
+    "minilm": {
+      "type": "local",
+      "model_name": "minilm",
+      "cost_per_million_tokens": 0.0,
+      "infrastructure_cost_monthly": 383.98,
+      "gpu_hourly_cost": 0.526,
+      "queries_per_second": 84.08057842915395,
+      "capacity_queries_per_month": 217936859.28836703,
+      "cost_per_query": {
+        "1K": 0.38398000000000004,
+        "10K": 0.038398,
+        "100K": 0.0038398,
+        "1M": 0.00038398
+      },
+      "assumptions": {
+        "instance_type": "AWS g4dn.xlarge",
+        "hourly_cost": 0.526,
+        "hours_per_month": 730,
+        "based_on_latency_ms": 11.89335300354287
+      }
+    },
+    "bge-base": {
+      "type": "local",
+      "model_name": "bge-base",
+      "cost_per_million_tokens": 0.0,
+      "infrastructure_cost_monthly": 383.98,
+      "gpu_hourly_cost": 0.526,
+      "queries_per_second": 21.007521132616635,
+      "capacity_queries_per_month": 54451494.775742315,
+      "cost_per_query": {
+        "1K": 0.38398000000000004,
+        "10K": 0.038398,
+        "100K": 0.0038398,
+        "1M": 0.00038398
+      },
+      "assumptions": {
+        "instance_type": "AWS g4dn.xlarge",
+        "hourly_cost": 0.526,
+        "hours_per_month": 730,
+        "based_on_latency_ms": 47.60199900250882
+      }
+    },
+    "bge-large": {
+      "type": "local",
+      "model_name": "bge-large",
+      "cost_per_million_tokens": 0.0,
+      "infrastructure_cost_monthly": 383.98,
+      "gpu_hourly_cost": 0.526,
+      "queries_per_second": 6.692398134525012,
+      "capacity_queries_per_month": 17346695.964688834,
+      "cost_per_query": {
+        "1K": 0.38398000000000004,
+        "10K": 0.038398,
+        "100K": 0.0038398,
+        "1M": 0.00038398
+      },
+      "assumptions": {
+        "instance_type": "AWS g4dn.xlarge",
+        "hourly_cost": 0.526,
+        "hours_per_month": 730,
+        "based_on_latency_ms": 149.42326799733564
+      }
+    }
+  },
+  "metadata": {
+    "timestamp": "2026-01-02T13:31:15.537481",
+    "config_file": "benchmark_config.yaml",
+    "dataset_size": 500,
+    "num_queries": 100,
+    "models_tested": [
+      "minilm",
+      "bge-base",
+      "bge-large"
+    ],
+    "latency_runs": 100,
+    "batch_size": 32
+  }
+}
