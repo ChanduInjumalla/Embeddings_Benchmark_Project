@@ -1,0 +1,50 @@
+# Text Embeddings Benchmark Configuration
+
+models:
+  - id: "minilm"
+    type: "local"
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    dimensions: 384
+    description: "Lightweight model, fastest inference, suitable for CPU"
+
+  - id: "bge-base"
+    type: "local"
+    model_name: "BAAI/bge-base-en-v1.5"
+    dimensions: 768
+    description: "Medium-sized model, balanced quality and speed"
+
+  - id: "bge-large"
+    type: "local"
+    model_name: "BAAI/bge-large-en-v1.5"
+    dimensions: 1024
+    description: "Large model, best retrieval quality"
+
+# Dataset parameters
+dataset:
+  num_documents: 500
+  num_queries: 100
+  seed: 42
+  topics:
+    - technology
+    - science
+    - history
+    - sports
+    - arts
+    - business
+    - health
+    - environment
+    - education
+    - entertainment
+
+# Benchmark parameters
+benchmark_parameters:
+  # Latency benchmark
+  latency_runs: 100
+  latency_warmup_runs: 5
+
+  # Encoding batch size
+  batch_size: 32
+
+  # Cost analysis assumptions (AWS g4dn.xlarge)
+  gpu_instance_hourly_cost: 0.526
+  hours_per_month: 730
